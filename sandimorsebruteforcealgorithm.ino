@@ -260,12 +260,13 @@ while(Serial.available() > 0 )
 
         while(akhirposisi1 < sandimorse.length() ) //string matching
         {
-            mengeksposdata(sandimorse.substring(mulaiposisi1, akhirposisi1)); // fungsi yang mengubah data sandi morse menjadi angka, huruf, dan simbol.
-           mulaiposisi1=akhirposisi1+1;
-           if(mulaiposisi1 == sandimorse.length() )
-           {
-              break; 
-           }
+          mengeksposdata(sandimorse.substring(mulaiposisi1, akhirposisi1)); 
+            // fungsi yang mengubah data sandi morse menjadi angka, huruf, dan simbol.
+          mulaiposisi1=akhirposisi1+1;
+          if(mulaiposisi1 == sandimorse.length() )
+          {
+            break; 
+          }
            akhirposisi1= sandimorse.indexOf('#', mulaiposisi1);
         }
         mulaiposisi1=0;
