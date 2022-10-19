@@ -4,7 +4,7 @@ int titikButton=2;//titikbutton
 int garisButton=3;//garisbutton
 int buzzer=8;
 
-int characterAscii=0;//karakter
+int karakterascii=0;//karakter
 int mulaiposisi=0, 
 	akhirposisi=0;//mulai posisi - akhir posisi
 int mulaiposisi1=0, 
@@ -165,11 +165,11 @@ char konvmenjadikarakter(String karaktersandi) //bruteforce
   {
    	if(karaktersandi == data[i])
     {
-      characterAscii = i+33;//ascii dari urutan ke 33
+      karakterascii = i+33;//ascii dari urutan ke 33
       break;
     }
   }
-  return characterAscii;
+  return karakterascii;
 
 }
 
