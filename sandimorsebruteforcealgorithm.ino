@@ -178,16 +178,15 @@ void mengeksposdata(String data) //string matching
         data.concat('|'); // Menempatkan | di akhir kata untuk menyederhanakan pemrosesan lebih lanjut
 
         akhirposisi=data.indexOf('|');
-
-		    // while(akhirposisi != -1)
+        // while(akhirposisi != -1)
         // {
         //   mulaiposisi=akhirposisi+1;
         //   akhirposisi=data.indexOf('|', mulaiposisi);
         //   karaktersandi=data.substring(mulaiposisi, akhirposisi);
         //   text=text+konvmenjadikarakter(karaktersandi);
         // }
-  
-  		  // while( akhirposisi<data.length() )
+        
+        // while( akhirposisi<data.length() )
         // {
         //   karaktersandi=data.substring(mulaiposisi, akhirposisi);
         //   text.concat(konvmenjadikarakter(karaktersandi));
