@@ -280,7 +280,7 @@ while(Serial.available() > 0 )
               
         break;
 
-        case 92: // 92 data ascii ditombol keyboard \
+        case 92: // 92 data ascii ditombol keyboard \ atau |
         
         sandimorse=sandimorse+("|");
         Serial.print("|");
