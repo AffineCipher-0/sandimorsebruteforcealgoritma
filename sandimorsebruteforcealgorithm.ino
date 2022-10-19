@@ -120,7 +120,7 @@ void mati()
   digitalWrite(buzzer, LOW);
 }
 
-//prosess pada hardware
+//proses pada hardware
 
 void proses()
 {
