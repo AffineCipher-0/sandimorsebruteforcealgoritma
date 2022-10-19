@@ -16,6 +16,7 @@ int bagiantitikButton=0;//statustitikbutton
 String sandimorse="";//sandimorse
 String karaktersandi="";
 String text="";
+//char* string data[karakter]
 String data[karakter]={
   "-.-.--", // 33 - !
   ".-..-.", // 34 - "
