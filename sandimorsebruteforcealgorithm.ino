@@ -198,10 +198,9 @@ void mengeksposdata(String data) //string matching
         //     break;
         //   }
         //   akhirposisi=data.indexOf('|', mulaiposisi);   
-        //  }
-
-        //Loop untuk mengekstraksi Kode morse karakter tunggal dari rangkaian kata      
-        while(akhirposisi < data.length())
+        //  } 
+ 
+        while(akhirposisi < data.length()) //Loop untuk mengekstraksi Kode morse karakter tunggal dari rangkaian kata  
         {
           text.concat(konvmenjadikarakter(data.substring(mulaiposisi, akhirposisi)));// ditambahkan data.substring
           
