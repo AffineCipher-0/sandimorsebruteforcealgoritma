@@ -93,9 +93,9 @@ pinMode(garisButton, INPUT);
 pinMode(buzzer, OUTPUT);
 Serial.begin(9600);
 
-Serial.println("\nMasukan 1 untuk enter  ");
-Serial.println("\nMasukan \ untuk spasi  ");
-Serial.println("\n\nSandi Morse ");
+Serial.println("Tekan 1 untuk output hasil  ");
+Serial.println("Tekan | untuk spasi  ");
+Serial.println("Sandi Morse : ");
 
 }
 
@@ -131,26 +131,26 @@ void proses()
   
   if(bagiangarisButton == HIGH)
   {
-    sandimorse=sandimorse+("-"); // menyimpan string dalam sandi morse variabel dengan bantuan fungsi penggabungan
-    Serial.print("-");//pengguna menekan sandi
     merah();
     suara();
+    sandimorse=sandimorse+("-");
+    Serial.print("-");
     delay(1000);
   }
   else if(bagiantitikButton == HIGH)
   {
+   hijau();
+   suara();
    sandimorse=sandimorse+(".");
    Serial.print(".");
    delay(200);
-   hijau();
-   suara();
+  
   }
-  else if(bagiangarisButton==HIGH && bagiantitikButton==HIGH)
-  {
-    sandimorse=sandimorse+(" ");
-    mati();
-    delay(200);
-  }
+//  else if(bagiangarisButton==HIGH && bagiantitikButton==HIGH)
+//  {
+//    sandimorse=sandimorse+(" ");
+//    mati();
+//  }
   else
   {
     mati();
@@ -303,5 +303,3 @@ while(Serial.available() > 0 )
 proses();
 
 }
-
-
