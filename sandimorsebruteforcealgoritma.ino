@@ -146,7 +146,7 @@ char konvmenjadikarakter(String karaktersandi) //bruteforce
   {
    	if(karaktersandi == data[i])
     {
-      karakterascii = i+33;//ascii dari urutan ke 33
+      karakterascii = i+48;//ascii dari urutan ke 33
       break;
     }
   }
