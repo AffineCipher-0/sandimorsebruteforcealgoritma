@@ -12,27 +12,12 @@ int mulaiposisi1=0,
 int bagiangarisButton=0;//statusgarisbutton
 int bagiantitikButton=0;//statustitikbutton
 
-#define karakter 70//array dari ascci untuk morse code karakter 
+#define karakter 43//array dari ascci untuk morse code karakter 
 String sandimorse="";//sandimorse
 String karaktersandi="";
 String text="";
 //char* string data[karakter]
 String data[karakter]={
-  "-.-.--", // 33 - !
-  ".-..-.", // 34 - "
-  "",       // 35 - #
-  "...-..-",// 36 - $
-  "",       // 37 - %
-  ".-...",  // 38 - &
-  ".----.", // 39 - '
-  "-.--.",  // 40 - (
-  "-.--.-", // 41 - )
-  "",       // 42 - *
-  ".-.-.",  // 43 - +
-  "--..--", // 44 - ,
-  "-....-", // 45 - -
-  ".-.-.-", // 46 - .
-  "-..-.",  // 47 - /
   "-----",  // 48 - 0
   ".----",  // 49 - 1
   "..---",  // 50 - 2
@@ -76,11 +61,6 @@ String data[karakter]={
   "-..-",   // 88 - X
   "-.--",   // 89 - Y
   "--..",   // 90 - Z
-  "",       // 91 - [
-  "",       // 92 - \.
-  "",       // 93 - ]
-  "",       // 94 - ^
-  "..--.-" // 95 - _
 };
 
         
