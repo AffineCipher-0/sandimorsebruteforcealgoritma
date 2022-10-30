@@ -11,6 +11,7 @@ int mulaiposisi1=0,
 	akhirposisi1=0;//mulai posisi1 - akhir posisi1
 int bagiangarisButton=0;//statusgarisbutton
 int bagiantitikButton=0;//statustitikbutton
+// int statusledmerah=0;//statusledmerah
 
 #define karakter 43//array dari ascci untuk morse code karakter 
 String sandimorse="";//sandimorse
@@ -141,7 +142,7 @@ void proses()
 
 char konvmenjadikarakter(String karaktersandi) //bruteforce
 {
-  
+
   for(int i=0; i<karakter; i++)
   {
    	if(karaktersandi == data[i])
@@ -159,6 +160,15 @@ void mengeksposdata(String data) //string matching
         data.concat('|'); // Menempatkan | di akhir kata untuk menyederhanakan pemrosesan lebih lanjut
 
         akhirposisi=data.indexOf('|');
+        // while(akhirposisi != -1)
+        // {
+        //   karaktersandi=data.substring(mulaiposisi, akhirposisi);
+        //   karakterascii=konvmenjadikarakter(karaktersandi);
+        //   text=text+char(karakterascii);
+        //   mulaiposisi=akhirposisi+1;
+        //   akhirposisi=data.indexOf('|', mulaiposisi);
+        // }
+
         // while(akhirposisi != -1)
         // {
         //   mulaiposisi=akhirposisi+1;
@@ -208,6 +218,7 @@ void loop()
 while(Serial.available() > 0 ) 
 {
       int ascii=Serial.read();
+
 	  // if(ascii == 1)
       // {
       //   proses();
@@ -239,7 +250,7 @@ while(Serial.available() > 0 )
          
         akhirposisi1=sandimorse.indexOf('#');
 
-        while(akhirposisi1 < sandimorse.length() ) //string matching
+        while(akhirposisi1 < sandimorse.length() ) //string matching brute force
         {
           mengeksposdata(sandimorse.substring(mulaiposisi1, akhirposisi1)); 
             // fungsi yang mengubah data sandi morse menjadi angka, huruf, dan simbol.
@@ -250,6 +261,7 @@ while(Serial.available() > 0 )
           }
            akhirposisi1= sandimorse.indexOf('#', mulaiposisi1);
         }
+        
         mulaiposisi1=0;
         akhirposisi1=0;
 
