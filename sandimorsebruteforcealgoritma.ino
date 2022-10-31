@@ -74,8 +74,8 @@ pinMode(garisButton, INPUT);
 pinMode(buzzer, OUTPUT);
 Serial.begin(9600);
 
-Serial.println("Tekan 1 untuk output hasil  ");
-Serial.println("Tekan | untuk spasi  ");
+Serial.println("Tekan 1 di keyboard untuk output hasil  ");
+Serial.println("Tekan / di keyboard untuk spasi  ");
 Serial.println("Sandi Morse : ");
 
 }
@@ -157,22 +157,22 @@ char konvmenjadikarakter(String karaktersandi) //bruteforce
 
 void mengeksposdata(String data) //string matching
 {
-        data.concat('|'); // Menempatkan | di akhir kata untuk menyederhanakan pemrosesan lebih lanjut
+        data.concat('/'); // Menempatkan / di akhir kata untuk menyederhanakan pemrosesan lebih lanjut
 
-        akhirposisi=data.indexOf('|');
+        akhirposisi=data.indexOf('/');
         // while(akhirposisi != -1)
         // {
         //   karaktersandi=data.substring(mulaiposisi, akhirposisi);
         //   karakterascii=konvmenjadikarakter(karaktersandi);
         //   text=text+char(karakterascii);
         //   mulaiposisi=akhirposisi+1;
-        //   akhirposisi=data.indexOf('|', mulaiposisi);
+        //   akhirposisi=data.indexOf('/', mulaiposisi);
         // }
 
         // while(akhirposisi != -1)
         // {
         //   mulaiposisi=akhirposisi+1;
-        //   akhirposisi=data.indexOf('|', mulaiposisi);
+        //   akhirposisi=data.indexOf('/', mulaiposisi);
         //   karaktersandi=data.substring(mulaiposisi, akhirposisi);
         //   text=text+konvmenjadikarakter(karaktersandi);
         // }
@@ -187,7 +187,7 @@ void mengeksposdata(String data) //string matching
         //   {
         //     break;
         //   }
-        //   akhirposisi=data.indexOf('|', mulaiposisi);   
+        //   akhirposisi=data.indexOf('/', mulaiposisi);   
         //  } 
  
         while(akhirposisi < data.length()) //Loop untuk mengekstraksi Kode morse karakter tunggal dari rangkaian kata  
@@ -200,7 +200,7 @@ void mengeksposdata(String data) //string matching
           {
             break;
           }
-          akhirposisi=data.indexOf('|', mulaiposisi);
+          akhirposisi=data.indexOf('/', mulaiposisi);
         }
                 
         
@@ -225,8 +225,8 @@ while(Serial.available() > 0 )
       // }
       // else if(ascii == 92)
       // {
-      //   sandimorse=sandimorse+("\");
-      //   Serial.print("\");
+      //   sandimorse=sandimorse+("/");
+      //   Serial.print("/");
       //   mengeksposdata(sandimorse);
       //   sandimorse="";
       // }
@@ -272,10 +272,10 @@ while(Serial.available() > 0 )
               
         break;
 
-        case 92: // 92 data ascii ditombol keyboard \ atau |
+        case 47: // 47 data ascii ditombol keyboard /
         
-        sandimorse=sandimorse+("|");
-        Serial.print("|");
+        sandimorse=sandimorse+("/");
+        Serial.print("/");
         delay(200);
         
         break;
