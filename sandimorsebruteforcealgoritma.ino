@@ -280,7 +280,7 @@ while(Serial.available() > 0 )
         
         break;
 
-        case 51: // 51 data ascii dari keyboard 2
+        case 51: // 51 data ascii dari keyboard 3
           
         sandimorse=sandimorse+("#");
         Serial.print("#");
