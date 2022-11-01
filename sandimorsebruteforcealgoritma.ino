@@ -135,7 +135,7 @@ void proses()
   else
   {
     mati();
-    delay(200);
+    delay(50);
   }
 
 }
