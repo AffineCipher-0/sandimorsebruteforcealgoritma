@@ -190,7 +190,7 @@ void mengeksposdata(String data) //string matching
         //   akhirposisi=data.indexOf('/', mulaiposisi);   
         //  } 
  
-        while(akhirposisi < data.length()) //Loop untuk mengekstraksi Kode morse karakter tunggal dari rangkaian kata  
+        while(akhirposisi < data.length()) //Loop untuk mengekstraksi sandi morse karakter tunggal dari rangkaian kata  
         {
           text.concat(konvmenjadikarakter(data.substring(mulaiposisi, akhirposisi)));// ditambahkan data.substring
           
@@ -267,7 +267,7 @@ while(Serial.available() > 0 )
 
         text=""; //mengubah terjemahan baru   
         sandimorse="";
-        Serial.println("\n\nMasukan Kode Morse :");
+        Serial.println("\n\nMasukan Sandi Morse :");
         
               
         break;
