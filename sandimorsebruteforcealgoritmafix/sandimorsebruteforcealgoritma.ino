@@ -78,7 +78,7 @@ pinMode(buzzer, OUTPUT);
 Serial.begin(9600);
 
 Serial.println("Tekan 1 di keyboard untuk output hasil  ");
-Serial.println("Tekan / di keyboard untuk spasi  ");
+Serial.println("Tekan / di keyboard atau pada button untuk spasi  ");
 Serial.println("Sandi Morse : ");
 
 }
