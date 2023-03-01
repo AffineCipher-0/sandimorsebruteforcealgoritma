@@ -167,6 +167,7 @@ char konvmenjadikarakter(String karaktersandi) //bruteforce
 
 void mengeksposdata(String data) //string matching
 {
+  
         data.concat('/'); // Menempatkan / di akhir kata untuk menyederhanakan pemrosesan lebih lanjut
 
         akhirposisi=data.indexOf('/');
@@ -193,6 +194,66 @@ void mengeksposdata(String data) //string matching
 
   
 }
+
+// void mengeksposdata(String data) //string matching
+// {
+//         data.concat('/'); // Menempatkan / di akhir kata untuk menyederhanakan pemrosesan lebih lanjut
+
+//         akhirposisi=data.indexOf('/');
+
+//          // while(akhirposisi != -1)
+//         // {
+//         //   karaktersandi=data.substring(mulaiposisi, akhirposisi);
+//         //   karakterascii=konvmenjadikarakter(karaktersandi);
+//         //   text=text+char(karakterascii);
+//         //   mulaiposisi=akhirposisi+1;
+//         //   akhirposisi=data.indexOf('/', mulaiposisi);
+//         // }
+
+//         // while(akhirposisi != -1)
+//         // {
+//         //   mulaiposisi=akhirposisi+1;
+//         //   akhirposisi=data.indexOf('/', mulaiposisi);
+//         //   karaktersandi=data.substring(mulaiposisi, akhirposisi);
+//         //   text=text+konvmenjadikarakter(karaktersandi);
+//         // }
+       
+//         // while( akhirposisi<data.length() )
+//         // {
+//         //   karaktersandi=data.substring(mulaiposisi, akhirposisi);
+//         //   text.concat(konvmenjadikarakter(karaktersandi));
+//         //   mulaiposisi=akhirposisi+1;
+//         //   karaktersandi="";
+//         //   if(mulaiposisi == data.length() )
+//         //   {
+//         //     break;
+//         //   }
+//         //   akhirposisi=data.indexOf('/', mulaiposisi);  
+//         //  }
+       
+//         while(akhirposisi < data.length()) //Loop untuk mengekstraksi sandi morse karakter tunggal dari rangkaian kata  
+//         {
+//           text.concat(konvmenjadikarakter(data.substring(mulaiposisi, akhirposisi)));// ditambahkan data.substring
+         
+//           mulaiposisi=akhirposisi+1;
+         
+//           if(mulaiposisi == data.length())
+//           {
+//             break;
+//           }
+//           akhirposisi=data.indexOf('/', mulaiposisi);
+//         }
+               
+       
+//         Serial.print(text);
+//         Serial.print(" ");
+//         mulaiposisi=0;
+//         akhirposisi=0;
+//         text="";    
+
+ 
+// }
+
 
 void loop() 
 {

@@ -2,6 +2,7 @@ int ledhijau=11;//pinlampu
 int ledmerah=12;
 int titikButton=2;//titikbutton
 int garisButton=3;//garisbutton
+int spasiButton=4;
 int buzzer=8;
 
 int karakterascii=0;//karakter
@@ -11,14 +12,16 @@ int mulaiposisi1=0,
 	akhirposisi1=0;//mulai posisi1 - akhir posisi1
 int bagiangarisButton=0;//statusgarisbutton
 int bagiantitikButton=0;//statustitikbutton
+int bagianspasiButton=0;
 // int statusledmerah=0;//statusledmerah
 
-#define karakter 43//array dari ascci untuk morse code karakter 
+#define karakter 44//array dari ascci untuk morse code karakter 
 String sandimorse="";//sandimorse
 String karaktersandi="";
 String text="";
 //char* string data[karakter]
 String data[karakter]={
+  "/", //47
   "-----",  // 48 - 0
   ".----",  // 49 - 1
   "..---",  // 50 - 2
@@ -74,8 +77,8 @@ pinMode(garisButton, INPUT);
 pinMode(buzzer, OUTPUT);
 Serial.begin(9600);
 
-Serial.println("Tekan 1 di keyboard untuk output hasil  ");
-Serial.println("Tekan / di keyboard untuk spasi  ");
+Serial.println("Tekan 1 di keyboard untuk output hasil ");
+Serial.println("Tekan / di keyboard atau pada button untuk spasi ");
 Serial.println("Sandi Morse : ");
 
 }
@@ -109,6 +112,8 @@ void proses()
   
   bagiantitikButton=digitalRead(titikButton);
   bagiangarisButton=digitalRead(garisButton);
+  bagianspasiButton=digitalRead(spasiButton);
+  
   
   if(bagiangarisButton == HIGH)
   {
@@ -116,7 +121,7 @@ void proses()
     suara();
     sandimorse=sandimorse+("-");
     Serial.print("-");
-    delay(1000);
+    delay(500);
   }
   else if(bagiantitikButton == HIGH)
   {
@@ -125,8 +130,13 @@ void proses()
    sandimorse=sandimorse+(".");
    Serial.print(".");
    delay(200);
-  
   }
+  else if(bagianspasiButton == HIGH)
+  {
+   sandimorse=sandimorse+("/");
+   Serial.print("/");
+   delay(200);
+  } 
 //  else if(bagiangarisButton==HIGH && bagiantitikButton==HIGH)
 //  {
 //    sandimorse=sandimorse+(" ");
@@ -147,7 +157,7 @@ char konvmenjadikarakter(String karaktersandi) //bruteforce
   {
    	if(karaktersandi == data[i])
     {
-      karakterascii = i+48;//ascii dari urutan ke 48
+      karakterascii = i+47;//ascii dari urutan ke 48
       break;
     }
   }
@@ -160,35 +170,6 @@ void mengeksposdata(String data) //string matching
         data.concat('/'); // Menempatkan / di akhir kata untuk menyederhanakan pemrosesan lebih lanjut
 
         akhirposisi=data.indexOf('/');
-        // while(akhirposisi != -1)
-        // {
-        //   karaktersandi=data.substring(mulaiposisi, akhirposisi);
-        //   karakterascii=konvmenjadikarakter(karaktersandi);
-        //   text=text+char(karakterascii);
-        //   mulaiposisi=akhirposisi+1;
-        //   akhirposisi=data.indexOf('/', mulaiposisi);
-        // }
-
-        // while(akhirposisi != -1)
-        // {
-        //   mulaiposisi=akhirposisi+1;
-        //   akhirposisi=data.indexOf('/', mulaiposisi);
-        //   karaktersandi=data.substring(mulaiposisi, akhirposisi);
-        //   text=text+konvmenjadikarakter(karaktersandi);
-        // }
-        
-        // while( akhirposisi<data.length() )
-        // {
-        //   karaktersandi=data.substring(mulaiposisi, akhirposisi);
-        //   text.concat(konvmenjadikarakter(karaktersandi));
-        //   mulaiposisi=akhirposisi+1;
-        //   karaktersandi="";
-        //   if(mulaiposisi == data.length() )
-        //   {
-        //     break;
-        //   }
-        //   akhirposisi=data.indexOf('/', mulaiposisi);   
-        //  } 
  
         while(akhirposisi < data.length()) //Loop untuk mengekstraksi sandi morse karakter tunggal dari rangkaian kata  
         {
