@@ -62,4 +62,5 @@ void loop() {
       }
       lcd.clear();  // Bersihkan layar LCD
 
-      
+
+      //algoritma hash
