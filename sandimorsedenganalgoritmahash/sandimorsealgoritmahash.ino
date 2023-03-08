@@ -15,7 +15,7 @@ const char* MORSE_CHARS[MORSE_CHAR_COUNT] = {
   "----.", "-----"
 };
 
-// Nilai hash untuk setiap karakter kode Morse
+// Nilai hash untuk setiap karakter sandi Morse
 uint32_t MORSE_HASHES[MORSE_CHAR_COUNT] = {
   116, 325, 288, 224, 46, 247, 301, 81, 77, 118, 232, 143, 278, 227, 218, 276, 346, 262, 321,
   239, 308, 269, 292, 379, 331, 428, 369, 406, 421, 461, 489, 406, 332, 342, 320, 287, 300
