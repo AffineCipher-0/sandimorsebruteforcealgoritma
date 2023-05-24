@@ -149,7 +149,7 @@ void proses()
   }
 
 }
-
+// {
 char konvmenjadikarakter(String karaktersandi) //bruteforce
 {
 
@@ -165,6 +165,17 @@ char konvmenjadikarakter(String karaktersandi) //bruteforce
 
 }
 
+// Penjelasan Kode
+// Kode ini mendefinisikan sebuah fungsi bernama "konvmenjadikarakter" yang mengambil string "karaktersandi" sebagai parameter masukan dan mengembalikan sebuah karakter.
+// Fungsi memeriksa apakah string input cocok dengan karakter apa pun dalam larik karakter "data". Jika ada kecocokan, 
+// nilai ASCII yang sesuai dihitung dan disimpan dalam variabel bilangan bulat bernama "karakterascii". 
+// Nilai ASCII yang dihitung adalah indeks dari karakter yang cocok dalam larik "data" yang ditambahkan ke 47 (kode ASCII untuk angka 0).
+// Terakhir, fungsi mengembalikan karakter yang dihitung (dicetak dari nilai bilangan bulat "karakterascii").
+// Secara keseluruhan, kode ini melakukan algoritma brute force untuk mengonversi karakter ke nilai ASCII yang sesuai
+
+// }
+
+//{
 void mengeksposdata(String data) //string matching
 {
   
@@ -194,6 +205,14 @@ void mengeksposdata(String data) //string matching
 
   
 }
+
+// Kode ini mendefinisikan fungsi yang disebut "mengeksposdata" yang mengambil parameter string tunggal yang disebut "data". 
+// Fungsi memproses string input ini dengan menambahkan garis miring (/) untuk menyederhanakan pemrosesan selanjutnya. 
+// Kemudian mengekstrak karakter sandi morse satu karakter dari string dan mengubahnya menjadi karakter (ASCII) menggunakan fungsi lain yang disebut "konvmenjadikarakter". 
+// Karakter yang diekstraksi digabungkan bersama dalam variabel string baru yang disebut "teks". Terakhir, isi "teks" ditampilkan di layar LCD (LCD pada serial monitor) menggunakan fungsi bernama "lcd_1.print" 
+// dan dicetak ke monitor serial menggunakan "Serial.print". Variabel "mulaiposisi", "akhirposisi", dan "teks" diatur ulang di akhir fungsi untuk mempersiapkan pemrosesan selanjutnya.
+
+// }
 
 // void mengeksposdata(String data) //string matching
 // {
