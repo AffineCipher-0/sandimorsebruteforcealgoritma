@@ -79,7 +79,6 @@ void setup()
   Serial.begin(9600);
 
   Serial.println("Tekan 1 di keyboard untuk output hasil");
-  Serial.println("Tekan / di keyboard atau pada button untuk spasi");
   Serial.println("Sandi Morse : ");
 }
 
@@ -219,7 +218,6 @@ void loop()
         sandimorse = "";
         Serial.println("\n");
         Serial.println("Tekan 1 di keyboard untuk output hasil");
-        Serial.println("Tekan / di keyboard atau pada button untuk spasi");
         Serial.println("Sandi Morse : ");
         break;
 
