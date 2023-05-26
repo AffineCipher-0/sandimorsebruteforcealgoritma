@@ -78,6 +78,8 @@ void setup()
   pinMode(buzzer, OUTPUT);
   Serial.begin(9600);
 
+  Serial.println("Tekan 1 di keyboard untuk output hasil");
+  Serial.println("Sandi Morse : ");
 }
 
 void hijau()
